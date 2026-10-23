@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Three directions</title>
+<style>
+body{margin:0;background:#e9e7e2;font-family:"Helvetica Neue",Arial,sans-serif;padding:40px;color:#111}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.label{font:600 13px/1.3 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;color:#333}
+.label b{display:block;font:700 22px/1.2 "Helvetica Neue",Arial;letter-spacing:-.01em;text-transform:none;color:#111;margin-top:4px}
+.panel{height:640px;border-radius:14px;overflow:hidden;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.note{font-size:14px;line-height:1.5;color:#333;margin:14px 2px 0}
+.mono{font-family:ui-monospace,Menlo,monospace}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 26px;font-size:12px}
+
+/* ---------- A: In Focus ---------- */
+.a{background:#fbfaf7;color:#16171a}
+.a .nav span:last-child{display:flex;gap:6px}
+.a .pill{border:1px solid #cfccc4;border-radius:999px;padding:4px 10px;font-size:11px}
+.a .pill.on{background:#16171a;color:#fff;border-color:#16171a}
+.a .hero{padding:40px 26px 0;position:relative}
+.a .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#1f5ad6;margin:0 0 14px}
+.a h1{font-size:46px;line-height:1.02;letter-spacing:-.035em;margin:0 0 6px;font-weight:800}
+.a h1 .blur{filter:blur(5px);opacity:.75}
+.a .af{position:absolute;left:18px;top:94px;width:84%;height:132px;}
+.a .af i{position:absolute;width:20px;height:20px;border:2.5px solid #1f5ad6}
+.a .af i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}
+.a .af i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}
+.a .af i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}
+.a .af i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
+.a p.l{font-size:15px;line-height:1.55;color:#4a4d55;margin:26px 0 22px;max-width:30ch}
+.a .viewas{margin:0 26px;border:1px solid #e2dfd8;border-radius:12px;padding:14px;background:#fff}
+.a .viewas .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6a6d75;margin-bottom:10px}
+.a .opts{display:flex;flex-wrap:wrap;gap:6px}
+.a .photo{margin:18px 26px 0;height:130px;border-radius:10px;background:linear-gradient(200deg,#e08a4a,#6b2c14 55%,#1d1d22);position:relative}
+.a .photo span{position:absolute;bottom:8px;left:10px;font-size:10px;color:#fff;background:rgba(0,0,0,.5);padding:3px 6px;border-radius:3px}
+
+/* ---------- B: Coast Road ---------- */
+.b{background:#0f1a1f;color:#eef3f1}
+.b .nav{color:#9fb3ae}
+.b .map{position:absolute;inset:0}
+.b .content{position:relative;padding:28px 26px}
+.b .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f2b84b;margin:0 0 12px}
+.b h1{font-size:40px;line-height:1.04;letter-spacing:-.03em;margin:0 0 14px;font-weight:800;max-width:11ch}
+.b p.l{font-size:14.5px;line-height:1.55;color:#a9bdb8;max-width:27ch;margin:0}
+.b .stop{position:absolute;display:flex;align-items:center;gap:8px;font-size:11px}
+.b .stop i{width:12px;height:12px;border-radius:50%;background:#f2b84b;box-shadow:0 0 0 4px rgba(242,184,75,.2);flex:none}
+.b .stop.dim i{background:#0f1a1f;border:2px solid #f2b84b;box-shadow:none}
+.b .stop div{background:rgba(15,26,31,.85);border:1px solid #284047;border-radius:8px;padding:6px 9px;line-height:1.3}
+.b .stop b{display:block;font-size:12px;color:#fff}
+.b .stop span{color:#8fa7a1}
+.b .odo{position:absolute;right:26px;bottom:22px;text-align:right;font-size:11px;color:#8fa7a1;letter-spacing:.08em}
+.b .odo b{color:#f2b84b;font-size:20px;letter-spacing:.05em;display:block}
+
+/* ---------- C: Exposure (editorial) ---------- */
+.c{background:#f4f1ea;color:#1a1a1a;font-family:Georgia,"Times New Roman",serif}
+.c .nav{font-family:ui-monospace,Menlo,monospace;color:#6b675e;border-bottom:1px solid #d8d3c7}
+.c .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;padding:26px}
+.c h1{font-size:44px;line-height:1;letter-spacing:-.02em;margin:0 0 14px;font-weight:400}
+.c h1 i{color:#b4421e}
+.c p.l{font:15px/1.55 "Helvetica Neue",Arial;color:#55524b;margin:0}
+.c .por{height:250px;border-radius:2px;background:linear-gradient(170deg,#9b8c76,#3b3328);position:relative}
+.c .por span{position:absolute;bottom:8px;left:8px;font:10px ui-monospace,Menlo;color:#fff}
+.c .exif{padding:0 26px}
+.c .card{border-top:1px solid #1a1a1a;padding:12px 0;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:baseline}
+.c .card .n{font:12px ui-monospace,Menlo;color:#b4421e}
+.c .card h3{font-size:19px;font-weight:400;margin:0}
+.c .card .meta{font:11px ui-monospace,Menlo;color:#6b675e;text-align:right;line-height:1.5}
+</style></head>
+<body>
+<div class="row">
+
+  <div>
+    <p class="label">Direction A<b>In Focus</b></p>
+    <div class="panel a">
+      <div class="nav"><strong>Sitaram Remalkar</strong><span><span class="pill on">Work</span><span class="pill">About</span><span class="pill">Contact</span></span></div>
+      <div class="hero">
+        <div class="af"><i></i><i></i><i></i><i></i></div>
+        <p class="k mono">Principal Engineer · Accessibility</p>
+        <h1>Bringing the web <span class="blur">into</span> focus<br>for everyone.</h1>
+        <p class="l">The headline sharpens like a camera finding focus. I build the tools that make accessibility automatic.</p>
+      </div>
+      <div class="viewas">
+        <div class="t mono">View this site as…</div>
+        <div class="opts"><span class="pill on">Default</span><span class="pill">Low vision</span><span class="pill">Colour blind</span><span class="pill">Keyboard only</span><span class="pill">Screen reader</span></div>
+      </div>
+      <div class="photo"><span class="mono">Your photo · 1/1000 f/4</span></div>
+    </div>
+    <p class="note"><b>Light, clean, very professional.</b> Your photography comes in as camera focus. The site doubles as a live demo of your accessibility skills: visitors switch "View as…" and see the page change. This is the strongest pitch to employers.</p>
+  </div>
+
+  <div>
+    <p class="label">Direction B<b>Coast Road</b></p>
+    <div class="panel b">
+      <svg class="map" viewBox="0 0 400 640" preserveAspectRatio="none" aria-hidden="true">
+        <defs><pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#17282e" stroke-width="1"/></pattern></defs>
+        <rect width="400" height="640" fill="url(#g)"/>
+        <path d="M400 230 C 360 260, 380 330, 340 370 S 330 470, 290 520 S 300 600, 250 640 L400 640Z" fill="#0b2a33"/>
+        <path d="M300 250 C 270 300, 290 340, 250 380 S 250 450, 215 495 S 210 560, 180 610" fill="none" stroke="#f2b84b" stroke-width="3" stroke-dasharray="1 0" stroke-linecap="round"/>
+        <path d="M300 250 C 270 300, 290 340, 250 380 S 250 450, 215 495 S 210 560, 180 610" fill="none" stroke="#f2b84b" stroke-width="10" opacity=".12"/>
+      </svg>
+      <div class="nav"><strong style="color:#fff">Sitaram Remalkar</strong><span class="mono">NH66 · MUMBAI → KONKAN</span></div>
+      <div class="content">
+        <p class="k mono">Principal Software Engineer</p>
+        <h1>Every career is a long ride.</h1>
+        <p class="l">From Kudal–Sawantwadi to Mumbai: each stop on this road is a chapter of my work.</p>
+      </div>
+      <div class="stop" style="left:265px;top:240px"><i></i><div><b>Mira Road</b><span>BarrierBreak · now</span></div></div>
+      <div class="stop dim" style="left:200px;top:372px"><i></i><div><b>Tech Mahindra</b><span>2019–23</span></div></div>
+      <div class="stop dim" style="left:150px;top:485px"><i></i><div><b>First code</b><span>2010</span></div></div>
+      <div class="stop dim" style="left:118px;top:598px"><i></i><div><b>Kudal</b><span>Where it began</span></div></div>
+      <div class="odo mono">ODOMETER<b>13 YRS</b><b>640 RULES</b></div>
+    </div>
+    <p class="note"><b>Personal and memorable.</b> The site is a stylised map of the coastal road between your Konkan roots and Mumbai. Scrolling rides you along the route, and each stop opens a chapter with your work and your photos from that road.</p>
+  </div>
+
+  <div>
+    <p class="label">Direction C<b>Exposure</b></p>
+    <div class="panel c">
+      <div class="nav"><span>SITARAM REMALKAR</span><span>INDEX · WORK · FRAMES · CONTACT</span></div>
+      <div class="grid">
+        <div><h1>Engineer by trade, <i>photographer</i> by eye.</h1><p class="l">Principal Software Engineer building accessibility platforms and developer tools.</p></div>
+        <div class="por"><span>Your portrait · 50mm f/1.8</span></div>
+      </div>
+      <div class="exif">
+        <div class="card"><span class="n">01</span><h3>A11yInspect for VS Code</h3><span class="meta">TypeScript<br>2025–26</span></div>
+        <div class="card"><span class="n">02</span><h3>The 640-rule engine</h3><span class="meta">Node · Postgres<br>2023–26</span></div>
+        <div class="card"><span class="n">03</span><h3>VPAT on autopilot</h3><span class="meta">LLM pipeline<br>2026</span></div>
+        <div class="card"><span class="n">04</span><h3>Frames: Konkan run</h3><span class="meta">Photo essay<br>12 images</span></div>
+      </div>
+    </div>
+    <p class="note"><b>Editorial and calm,</b> like a photography magazine. Your photos get the biggest stage, and every project is listed like a captioned print. Riding shows up through the photo essays. Mature and understated.</p>
+  </div>
+
+</div>
+</body></html>

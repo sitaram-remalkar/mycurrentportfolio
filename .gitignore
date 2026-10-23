@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.vscode/
+.idea/
+# keep the original résumé (has phone number) out of the repo
+*Resume*.pdf

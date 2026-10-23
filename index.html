@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sitaram Remalkar — Principal Software Engineer, Accessibility</title>
+  <meta name="description" content="Sitaram Remalkar is a Principal Software Engineer at BarrierBreak in Mumbai, building full-stack platforms, developer tooling and accessibility automation.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Sitaram Remalkar — Bringing the web into focus">
+  <meta property="og:description" content="Principal Software Engineer building the platforms and developer tools that make accessibility automatic.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.documentElement.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Everything inside .page is what the "View as" simulations act on. -->
+  <div class="page" id="page">
+    <header class="site-header" data-sr="banner">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top">Sitaram Remalkar<span aria-hidden="true">.</span></a>
+        <nav aria-label="Primary" data-sr="navigation">
+          <ul class="nav-list">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#frames">Frames</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="icon-btn theme-toggle" type="button" aria-pressed="false" hidden>
+          <span class="visually-hidden">Dark theme</span>
+          <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36A5.5 5.5 0 0 1 13.36 3.1 9.3 9.3 0 0 0 12 3z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1" data-sr="main">
+      <!-- ================= HERO ================= -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="thirds" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="wrap hero-inner">
+          <p class="kicker mono"><span class="af-status" aria-hidden="true"><span class="af-dot"></span><span class="af-text">AF-C</span></span>Principal Software Engineer · Accessibility</p>
+          <div class="headline-wrap">
+            <span class="af-box" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <h1 id="hero-title" class="headline">
+              <span class="w">Bringing</span> <span class="w">the</span> <span class="w">web</span><br class="br-lg">
+              <span class="w">into</span> <span class="w focus-word">focus</span><br>
+              <span class="w">for</span> <span class="w">everyone.</span>
+            </h1>
+          </div>
+          <p class="lede">I'm Sitaram — I lead the platforms and developer tools at <strong>BarrierBreak</strong> that make accessibility automatic, from a 640-rule engine to the editor, the browser and the CI pipeline.</p>
+          <p class="actions">
+            <a class="btn btn-primary" href="#work">See my work</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </p>
+
+          <dl class="stats" aria-label="Highlights">
+            <div><dt>Years building software</dt><dd><span class="count" data-to="13">13</span>+</dd></div>
+            <div><dt>Accessibility rules engineered</dt><dd><span class="count" data-to="640">640</span>+</dd></div>
+            <div><dt>VS Code Marketplace releases</dt><dd><span class="count" data-to="45">45</span>+</dd></div>
+            <div><dt>Browsers, one codebase</dt><dd><span class="count" data-to="4">4</span></dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ================= ABOUT ================= -->
+      <section class="section reveal" id="about" aria-labelledby="about-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-num mono"><span>01</span> About</p>
+            <h2 id="about-title">Software that works for everyone who uses it.</h2>
+          </div>
+          <div class="about-grid">
+            <div class="prose">
+              <p>I was born in Dahisar and have spent 13+ years writing software in Mumbai — starting with PHP and MySQL product work and growing into leading full-stack TypeScript platforms.</p>
+              <p>At BarrierBreak, an accessibility technology company, I own the core rules engine that powers every product the company ships: web, IDE, browser, mobile and AI. I built the <strong>A11yInspect</strong> VS Code extension and CLI end-to-end, automated VPAT/ACR compliance reporting, and delivered enterprise SSO and Stripe billing in the central auth service.</p>
+              <p>Away from the keyboard I'm usually behind a camera or on a motorcycle — at a track day or on a long tour. Both teach the same thing my work does: look carefully, then commit to a clean line.</p>
+            </div>
+            <aside class="card facts" aria-labelledby="facts-title">
+              <h3 id="facts-title" class="mono">Spec sheet</h3>
+              <dl>
+                <div><dt>Role</dt><dd>Principal Software Engineer</dd></div>
+                <div><dt>Company</dt><dd>BarrierBreak</dd></div>
+                <div><dt>Based in</dt><dd>Mira Road, Mumbai</dd></div>
+                <div><dt>Standards</dt><dd>WCAG 2.0–2.2, Section 508, EN 301 549, VPAT 2.5</dd></div>
+                <div><dt>Languages</dt><dd>English, Hindi, Marathi</dd></div>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VIEW AS (intro) ================= -->
+      <section class="section reveal viewas-intro" aria-labelledby="viewas-title">
+        <div class="wrap viewas-card">
+          <div>
+            <p class="sec-num mono"><span>02</span> Try it</p>
+            <h2 id="viewas-title">See this page the way others do.</h2>
+            <p class="muted">Accessibility is easier to understand when you experience it. Use <strong>View as</strong> at the bottom of the screen to simulate low vision or colour blindness, or to see the page as a keyboard or screen-reader user does. Nothing is lost: this site is built to work in every mode.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-open-dock>Open “View as”</button>
+        </div>
+      </section>
+
+      <!-- ================= WORK ================= -->
+      <section class="section reveal" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-num mono"><span>03</span> Selected work</p>
+            <h2 id="work-title">What I've built, and what changed because of it.</h2>
+          </div>
+
+          <ul class="work-list" role="list">
+            <li class="card work featured">
+              <div>
+                <p class="tag mono">Developer tooling · sole developer</p>
+                <h3>A11yInspect for VS Code &amp; CLI</h3>
+                <p>An accessibility auditor that lives where developers write code. It checks 17+ file types and frameworks — JSX/TSX, Vue, Angular, Svelte, Astro, MDX, Liquid, Twig, ERB — with diagnostics, quick fixes, CodeLens and AI explain/fix.</p>
+                <p>The hard part was React: components are bundled with esbuild and rendered with <code>renderToStaticMarkup</code> in worker threads, with a Babel AST fallback when rendering isn't possible.</p>
+                <ul class="chips" role="list"><li>VS Code API</li><li>esbuild</li><li>Worker threads</li><li>Babel AST</li><li>SARIF</li></ul>
+              </div>
+              <dl class="kv">
+                <div><dt>Releases</dt><dd>45+ on the Marketplace</dd></div>
+                <div><dt>Builds</dt><dd>10 platform targets</dd></div>
+                <div><dt>CI</dt><dd>GitHub Action · GitLab · Azure · Jenkins · Bitbucket</dd></div>
+                <div><dt>Output</dt><dd>SARIF, JUnit, JSON, HTML; GitHub &amp; Jira</dd></div>
+              </dl>
+            </li>
+
+            <li class="card work">
+              <p class="tag mono">Core platform</p>
+              <h3>The accessibility rules engine</h3>
+              <p>Primary owner of BarrierBreak's proprietary engine — 31 modules and 640+ rule codes covering ARIA, contrast, forms, tables, landmarks, focus, target size and shadow DOM. It runs inside every product and the company's MCP server. Also built its admin platform: a Fastify + PostgreSQL API with 64 routes and a React/TanStack UI.</p>
+              <ul class="chips" role="list"><li>TypeScript</li><li>Fastify</li><li>PostgreSQL</li><li>MCP</li></ul>
+            </li>
+
+            <li class="card work">
+              <p class="tag mono">Compliance</p>
+              <h3>VPAT / ACR reports on autopilot</h3>
+              <p>Automated VPAT 2.5 / ACR generation in Excel, Word and PDF across WCAG 2.1, Section 508, EN 301 549, IS 17802 and GIGW 3.0 — with AI-written conformance remarks, token tracking and caching — replacing hand-built reports.</p>
+              <ul class="chips" role="list"><li>LLM pipelines</li><li>Node.js</li><li>VPAT 2.5</li></ul>
+            </li>
+
+            <li class="card work">
+              <p class="tag mono">Browser extensions</p>
+              <h3>Four browsers, one codebase</h3>
+              <p>Unified the Chrome, Edge and Firefox MV3 extensions into a single codebase, led the Safari port, and replaced per-browser sign-in with one token-exchange flow. Earlier: the DevTools panel, PDF/XLSX reports, user-flow audits and ruleset sync.</p>
+              <ul class="chips" role="list"><li>MV3</li><li>Safari</li><li>React</li><li>Vite</li></ul>
+            </li>
+
+            <li class="card work">
+              <p class="tag mono">Auth &amp; billing</p>
+              <h3>Enterprise SSO and Stripe subscriptions</h3>
+              <p>Hardened SAML SSO — IdP metadata and certificate validation, audit logs — and built the Stripe lifecycle: per-product cancellation, seat metering, free-plan grants and AI-token add-ons. Closed an org-level access-control flaw along the way.</p>
+              <ul class="chips" role="list"><li>SAML</li><li>Stripe Billing</li><li>Security</li></ul>
+            </li>
+
+            <li class="card work">
+              <p class="tag mono">Mobile &amp; IDE</p>
+              <h3>Taking checks beyond the web</h3>
+              <p>Bootstrapped 9 Swift packages (auditors, a VPAT CLI, an XCUITest library, an Xcode extension), added 62 automated WCAG 2.2 / HIG workflows to an iOS framework, built an Android Studio plugin, and an 89-rule zero-dependency ESLint plugin.</p>
+              <ul class="chips" role="list"><li>Swift</li><li>Kotlin</li><li>ESLint AST</li><li>Figma</li></ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= EXPERIENCE ================= -->
+      <section class="section reveal" id="experience" aria-labelledby="exp-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-num mono"><span>04</span> Experience</p>
+            <h2 id="exp-title">Thirteen years, sharpening the picture.</h2>
+          </div>
+          <ol class="timeline" role="list">
+            <li><p class="when mono">Mar 2026 — Present</p><div><h3>Principal Software Engineer · <span class="org">BarrierBreak</span></h3><p>A11yInspect VS Code extension and CLI, CI integrations, automated VPAT/ACR, enterprise SSO and Stripe billing, unified browser extensions, iOS/Android and IDE tooling.</p></div></li>
+            <li><p class="when mono">Oct 2023 — Mar 2026</p><div><h3>Senior Full Stack Developer · <span class="org">BarrierBreak</span></h3><p>Owner of the 640+ rule engine and its admin platform; continuous-monitoring ruleset with Playwright and BullMQ; internal testing platform; browser extensions; Android scanner.</p></div></li>
+            <li><p class="when mono">Feb 2023 — Oct 2023</p><div><h3>Senior Software Engineer L2 · <span class="org">Justdial</span></h3><p>Data-audit and refinement module (React, Node.js, MongoDB), a pincode and geo-mapping master, and an IT helpdesk ticketing system.</p></div></li>
+            <li><p class="when mono">Oct 2019 — Feb 2023</p><div><h3>Tech Lead · <span class="org">Tech Mahindra</span></h3><p>Led EA Central, a Moodle-based LMS for 4 clients and 4,000+ users; built an orchestration system for a telecom client (Spring Boot, Oracle, Vue.js).</p></div></li>
+            <li><p class="when mono">Jul 2018 — Oct 2019</p><div><h3>Senior PHP Developer · <span class="org">IDC Technologies</span></h3><p>Placed with Tech Mahindra; custom LMS activities and automated reports.</p></div></li>
+            <li><p class="when mono">2010 — 2018</p><div><h3>PHP Developer and earlier roles</h3><p>Appetals Solutions, Ernest, Copious Corporate Gifting, Inwiz Solutions and Justdial — e-commerce, CRMs, a REST API for a media network's apps, VoIP tele-calling and payments.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ================= SKILLS ================= -->
+      <section class="section reveal" id="skills" aria-labelledby="skills-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-num mono"><span>05</span> Toolkit</p>
+            <h2 id="skills-title">The kit I carry.</h2>
+          </div>
+          <div class="skills-grid">
+            <section class="card" aria-labelledby="sk1"><h3 id="sk1">Frontend</h3><ul role="list"><li>TypeScript, JavaScript</li><li>React 18/19, Vite</li><li>TanStack Router &amp; Query</li><li>Redux Toolkit, Zustand</li><li>Tailwind CSS, Vue.js</li></ul></section>
+            <section class="card" aria-labelledby="sk2"><h3 id="sk2">Backend &amp; data</h3><ul role="list"><li>Node.js, Express, Fastify</li><li>PostgreSQL, Drizzle, Prisma</li><li>Redis, BullMQ</li><li>MongoDB, MySQL</li><li>PHP, SQL</li></ul></section>
+            <section class="card" aria-labelledby="sk3"><h3 id="sk3">Developer tooling</h3><ul role="list"><li>VS Code Extension API</li><li>ESLint plugins &amp; AST</li><li>MV3 extensions, all 4 browsers</li><li>Vite, Figma, WordPress plugins</li><li>Swift &amp; Kotlin tooling</li></ul></section>
+            <section class="card" aria-labelledby="sk4"><h3 id="sk4">DevOps &amp; cloud</h3><ul role="list"><li>Docker, Compose, Kubernetes</li><li>GitHub Actions, GHCR</li><li>Dokploy, AWS S3, MinIO</li><li>Sentry, Prometheus, Loki</li></ul></section>
+            <section class="card" aria-labelledby="sk5"><h3 id="sk5">AI &amp; automation</h3><ul role="list"><li>Claude Code, MCP</li><li>OpenAI APIs</li><li>Playwright, Puppeteer</li><li>Stripe, SAML SSO, MFA/TOTP</li></ul></section>
+            <section class="card" aria-labelledby="sk6"><h3 id="sk6">Accessibility</h3><ul role="list"><li>WCAG 2.0–2.2 (A/AA/AAA)</li><li>WAI-ARIA</li><li>Section 508, EN 301 549</li><li>VPAT 2.5 / ACR</li><li>Apple HIG</li></ul></section>
+          </div>
+          <p class="edu muted"><strong>Education:</strong> B.Sc. Computer Science, University of Mumbai. Coursework in MERN stack, Python and AWS Cloud Practitioner.</p>
+        </div>
+      </section>
+
+      <!-- ================= FRAMES ================= -->
+      <section class="section reveal" id="frames" aria-labelledby="frames-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="sec-num mono"><span>06</span> Frames</p>
+            <h2 id="frames-title">Behind the lens, and on the road.</h2>
+            <p class="muted sec-sub">Photographs from track days, long tours and the city I grew up in. Hover or focus a frame to pull it into focus.</p>
+          </div>
+          <!-- To use your photos: replace each <div class="ph"> with
+               <img src="photos/your-file.jpg" alt="Describe what's in the photo" loading="lazy"> -->
+          <ul class="gallery" role="list">
+            <li><figure tabindex="0"><div class="ph ph1" role="img" aria-label="Placeholder for a track-day photo"></div><figcaption><span>Track day</span><span class="mono exif">1/1000 · f/4 · ISO 200</span></figcaption></figure></li>
+            <li><figure tabindex="0"><div class="ph ph2" role="img" aria-label="Placeholder for a touring photo in the Western Ghats"></div><figcaption><span>Western Ghats</span><span class="mono exif">1/250 · f/8</span></figcaption></figure></li>
+            <li><figure tabindex="0"><div class="ph ph3" role="img" aria-label="Placeholder for a photo of the Konkan coast road"></div><figcaption><span>Konkan coast</span><span class="mono exif">1/500 · f/5.6</span></figcaption></figure></li>
+            <li><figure tabindex="0"><div class="ph ph4" role="img" aria-label="Placeholder for a portrait in the pit lane"></div><figcaption><span>Pit lane</span><span class="mono exif">1/125 · f/2.8</span></figcaption></figure></li>
+            <li><figure tabindex="0"><div class="ph ph5" role="img" aria-label="Placeholder for a night photo of Mumbai"></div><figcaption><span>Mumbai, after dark</span><span class="mono exif">1/60 · f/1.8</span></figcaption></figure></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= CONTACT ================= -->
+      <section class="section reveal contact" id="contact" aria-labelledby="contact-title">
+        <div class="wrap contact-grid">
+          <div>
+            <p class="sec-num mono"><span>07</span> Contact</p>
+            <h2 id="contact-title">Let's bring something into focus.</h2>
+            <p class="muted">Happy to talk about developer tooling, accessibility automation, or platform work that sits close to the people using it.</p>
+            <p class="actions"><a class="btn btn-primary" href="mailto:sitaram.rem@gmail.com">Email me</a><a class="btn btn-ghost" href="resume.pdf">Download résumé</a></p>
+          </div>
+          <ul class="contact-links" role="list">
+            <li><a href="mailto:sitaram.rem@gmail.com"><span class="label mono">Email</span><span>sitaram.rem@gmail.com</span></a></li>
+            <li><a href="https://www.linkedin.com/in/sitaram-remalkar" rel="noopener"><span class="label mono">LinkedIn</span><span>in/sitaram-remalkar</span></a></li>
+            <!-- TODO: replace YOUR-USERNAME with your GitHub username -->
+            <li><a href="https://github.com/YOUR-USERNAME" rel="noopener"><span class="label mono">GitHub</span><span>@YOUR-USERNAME</span></a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-sr="contentinfo">
+      <div class="wrap footer-inner">
+        <p>© <span id="year">2026</span> Sitaram Remalkar · Mumbai</p>
+        <p class="small">Built to WCAG 2.2 AA. Keyboard-first, works without JavaScript, and respects your motion, contrast and colour-scheme settings.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================= VIEW AS DOCK (outside .page so simulations never affect it) ================= -->
+  <aside class="dock" aria-label="View this site as" hidden>
+    <button class="dock-toggle" type="button" aria-expanded="false" aria-controls="dock-panel">
+      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>View as</span><span class="dock-current mono">Default</span>
+    </button>
+    <div class="dock-panel" id="dock-panel" hidden>
+      <fieldset>
+        <legend class="mono">View this site as…</legend>
+        <div class="dock-opts">
+          <label><input type="radio" name="sim" value="default" checked><span>Default</span></label>
+          <label><input type="radio" name="sim" value="low-vision"><span>Low vision</span></label>
+          <label><input type="radio" name="sim" value="colour-blind"><span>Colour blind</span></label>
+          <label><input type="radio" name="sim" value="keyboard"><span>Keyboard only</span></label>
+          <label><input type="radio" name="sim" value="screen-reader"><span>Screen reader</span></label>
+        </div>
+      </fieldset>
+      <p class="dock-note" aria-live="polite">You're seeing the page as most sighted mouse users do.</p>
+    </div>
+  </aside>
+
+  <!-- AF focus brackets that follow keyboard focus -->
+  <div class="af-ring" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <!-- Colour-blindness simulation (deuteranopia, the most common type) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="deuteranopia" color-interpolation-filters="linearRGB">
+      <feColorMatrix type="matrix" values="0.367 0.861 -0.228 0 0  0.280 0.673 0.047 0 0  -0.012 0.043 0.969 0 0  0 0 0 1 0"/>
+    </filter>
+  </svg>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sitaram Remalkar — Concept C: The Racing Line</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#111215; --surface:#18191d; --line:#2a2c32;
+  --text:#eeece7; --muted:#a9adb6; --accent:#f0712c; --plate:#f3f0e8;
+  --display:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --gutter:8rem;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:1.075rem;line-height:1.65}
+.wrap{width:min(100% - 2rem,72rem);margin-inline:auto}
+header{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 0}
+.brand{font-family:var(--display);font-weight:700;font-size:1.15rem}
+.brand b{color:var(--accent)}
+nav ul{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+.status{font-family:var(--mono);font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.status i{width:8px;height:8px;border-radius:50%;background:#3ecf6e;display:inline-block}
+
+/* ---------- course: racing line rail ---------- */
+.course{position:relative;padding-left:var(--gutter)}
+.rail{position:absolute;left:0;top:0;width:var(--gutter);height:100%;pointer-events:none}
+.rail path{vector-effect:non-scaling-stroke}
+
+/* hero */
+.hero{padding:5rem 0 4.5rem;position:relative}
+.kicker{font-family:var(--mono);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 1.25rem}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,6.3vw,4.8rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 1.5rem;max-width:15ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:1.25rem;color:var(--muted);max-width:46ch;margin:0 0 2rem}
+.actions{display:flex;gap:.75rem;flex-wrap:wrap;margin:0}
+.btn{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1.15rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:.95rem}
+.btn-p{background:var(--accent);color:#141414}
+.btn-g{border:1px solid var(--line);color:var(--text)}
+.sector{display:grid;grid-template-columns:repeat(4,1fr);margin-top:3.5rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sector div{padding:1.1rem 1.25rem;border-right:1px solid var(--line);display:flex;flex-direction:column-reverse}
+.sector div:last-child{border-right:0}
+.sector dd{margin:0;font-family:var(--display);font-weight:700;font-size:2.1rem;letter-spacing:-.03em;line-height:1.1}
+.sector dt{font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.sector dt b{color:var(--accent);font-weight:500}
+
+/* corner sign + section heads */
+section.s{padding:4.5rem 0;position:relative}
+.sign{position:absolute;left:calc(var(--gutter) * -1 + 1.6rem);top:4.6rem;width:3.4rem;height:3.4rem;border-radius:8px;background:var(--plate);color:#111;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.05rem;box-shadow:0 0 0 4px var(--bg)}
+.phase{font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 .5rem}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.025em;line-height:1.05;margin:0 0 .75rem}
+.intro{color:var(--muted);max-width:56ch;margin:0 0 2.25rem}
+
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.card.apex{grid-column:span 2;display:grid;grid-template-columns:1.35fr 1fr;gap:2rem;border-color:color-mix(in srgb,var(--accent) 55%,var(--line));background:linear-gradient(135deg,rgba(240,113,44,.10),var(--surface) 55%)}
+.tag{font-family:var(--mono);font-size:.72rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+.card h3{font-family:var(--display);font-weight:600;font-size:1.3rem;margin:.45rem 0 .55rem;line-height:1.2}
+.card.apex h3{font-size:1.7rem}
+.card p{margin:0;color:var(--muted);font-size:1rem}
+.kv{margin:0;display:grid;gap:.75rem}
+.kv div{display:grid;grid-template-columns:7rem 1fr;border-top:1px solid var(--line);padding-top:.75rem}
+.kv dt{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.kv dd{margin:0;font-weight:700;font-size:.98rem}
+
+.log{list-style:none;margin:0;padding:0}
+.log li{display:grid;grid-template-columns:11rem 1fr;gap:1.5rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.log .when{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.log h3{font-family:var(--display);font-weight:600;font-size:1.12rem;margin:0 0 .2rem}
+.log h3 span{color:var(--accent)}
+.log p{margin:0;color:var(--muted);font-size:.98rem}
+
+/* contact sheet */
+.sheet{background:#0b0b0c;border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.25rem .9rem}
+.sheet-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.72rem;color:#c9a14a;letter-spacing:.1em;margin-bottom:.8rem}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.frames figure{margin:0}
+.frames .img{aspect-ratio:3/2;border-radius:3px;position:relative}
+.frames figure:nth-child(1) .img{background:linear-gradient(200deg,#e07a3c,#5a2410 55%,#141414)}
+.frames figure:nth-child(2) .img{background:linear-gradient(160deg,#5d6f84,#1c2229)}
+.frames figure:nth-child(3) .img{background:linear-gradient(140deg,#3c5a49,#111a15)}
+.frames figure:nth-child(4) .img{background:linear-gradient(175deg,#c9b38f,#4a3a26)}
+.frames figure:nth-child(1) .img{outline:2px solid #e2433a;outline-offset:3px;border-radius:50% / 40%} /* photographer's grease-pencil pick */
+.frames .ph{position:absolute;top:.5rem;left:.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:rgba(255,255,255,.65);text-transform:uppercase}
+.frames figcaption{font-family:var(--mono);font-size:.72rem;color:#c9a14a;margin-top:.45rem;display:flex;justify-content:space-between;gap:.5rem}
+.frames figcaption span{color:#8d8a83}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+
+/* pit board */
+.pitboard{display:grid;grid-template-columns:1.2fr 1fr;gap:1rem;align-items:stretch}
+.board{background:#0b0b0c;border:1px solid var(--line);border-radius:12px;padding:1.5rem;font-family:var(--mono)}
+.board .row{display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:.6rem 0;font-size:.95rem}
+.board .row:last-child{border-bottom:0}
+.board .row b{color:#ffd23f;font-weight:500}
+.links{display:grid;gap:.6rem}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);text-decoration:none}
+.links a span{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+footer{padding:2.5rem 0 3rem;display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);margin-top:2rem}
+
+@media (max-width:52rem){
+  :root{--gutter:2.25rem}
+  nav,.status{display:none}
+  .sign{left:-2.25rem;width:2.2rem;height:2.2rem;font-size:.8rem;border-radius:6px;top:4.4rem}
+  .s .phase,.s h2{padding-left:.25rem}
+  .sector{grid-template-columns:1fr 1fr}
+  .sector div:nth-child(2){border-right:0}
+  .sector div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .cards,.why,.pitboard{grid-template-columns:1fr}
+  .card.apex{grid-column:auto;grid-template-columns:1fr}
+  .log li{grid-template-columns:1fr;gap:.25rem}
+  .frames{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">Sitaram Remalkar<b>.</b></div>
+    <nav aria-label="Primary"><ul><li><a href="#">About</a></li><li><a href="#">Experience</a></li><li><a href="#">Work</a></li><li><a href="#">Frames</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <span class="status"><i aria-hidden="true"></i>Open to conversations</span>
+  </header>
+
+  <div class="course">
+    <!-- the racing line: one continuous path down the page -->
+    <svg class="rail" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M50 0 C 50 60, 20 90, 20 140 S 80 220, 80 290 S 22 380, 22 450 S 78 540, 78 610 S 24 700, 24 770 S 70 870, 50 1000" fill="none" stroke="#2a2c32" stroke-width="18" stroke-linecap="round"/>
+      <path d="M50 0 C 50 60, 20 90, 20 140 S 80 220, 80 290 S 22 380, 22 450 S 78 540, 78 610 S 24 700, 24 770 S 70 870, 50 1000" fill="none" stroke="#f0712c" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+
+    <section class="hero" aria-labelledby="h">
+      <p class="kicker">Principal Software Engineer · BarrierBreak · Mira Road, Mumbai</p>
+      <h1 id="h">Every problem has a <em>clean line.</em> I find it.</h1>
+      <p class="lede">On track, it's the fastest way through a corner. In my work, it's the path that lets everyone use the web — I build the platforms and developer tools that make accessibility automatic.</p>
+      <p class="actions"><a class="btn btn-p" href="#">See the apex</a><a class="btn btn-g" href="#">Download résumé</a></p>
+      <dl class="sector">
+        <div><dt><b>S1</b> · Years building software</dt><dd>13+</dd></div>
+        <div><dt><b>S2</b> · Accessibility rules</dt><dd>640+</dd></div>
+        <div><dt><b>S3</b> · Marketplace releases</dt><dd>45+</dd></div>
+        <div><dt><b>S4</b> · Browsers, one codebase</dt><dd>4</dd></div>
+      </dl>
+    </section>
+
+    <section class="s" aria-labelledby="t1">
+      <span class="sign" aria-hidden="true">T1</span>
+      <p class="phase">Braking point · About</p>
+      <h2 id="t1">Slow in, so you can go fast out.</h2>
+      <p class="intro">I started with PHP and MySQL in 2010 and spent 13 years learning where to brake: understanding users and constraints before writing code. Today I lead full-stack TypeScript platforms in accessibility technology.</p>
+    </section>
+
+    <section class="s" aria-labelledby="t2">
+      <span class="sign" aria-hidden="true">T2</span>
+      <p class="phase">Turn-in · Experience</p>
+      <h2 id="t2">The road to here</h2>
+      <ol class="log">
+        <li><span class="when">Mar 2026 — now</span><div><h3>Principal Software Engineer · <span>BarrierBreak</span></h3><p>A11yInspect, CI integrations, VPAT automation, SSO and billing.</p></div></li>
+        <li><span class="when">Oct 2023 — Mar 2026</span><div><h3>Senior Full Stack Developer · <span>BarrierBreak</span></h3><p>Owner of the 640+ rule accessibility engine.</p></div></li>
+        <li><span class="when">Oct 2019 — Feb 2023</span><div><h3>Tech Lead · <span>Tech Mahindra</span></h3><p>LMS for 4 clients and 4,000+ users.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="s" aria-labelledby="t3">
+      <span class="sign" aria-hidden="true">T3</span>
+      <p class="phase">Apex · Selected work</p>
+      <h2 id="t3">Where it all comes together</h2>
+      <div class="cards">
+        <article class="card apex">
+          <div><span class="tag">Developer tooling · sole developer</span><h3>A11yInspect for VS Code &amp; CLI</h3><p>Accessibility auditing where developers write code, across 17+ frameworks, with quick fixes, CodeLens and AI explain/fix.</p></div>
+          <dl class="kv"><div><dt>Releases</dt><dd>45+ on Marketplace</dd></div><div><dt>Builds</dt><dd>10 platform targets</dd></div><div><dt>CI</dt><dd>GitHub Action · SARIF · Jira</dd></div></dl>
+        </article>
+        <article class="card"><span class="tag">Core platform</span><h3>The 640-rule engine</h3><p>Powers every BarrierBreak product and its MCP server.</p></article>
+        <article class="card"><span class="tag">Compliance</span><h3>VPAT / ACR on autopilot</h3><p>AI-assisted reports across WCAG, 508 and EN 301 549.</p></article>
+      </div>
+    </section>
+
+    <section class="s" aria-labelledby="t4">
+      <span class="sign" aria-hidden="true">T4</span>
+      <p class="phase">Frames · Behind the lens</p>
+      <h2 id="t4">Contact sheet</h2>
+      <p class="intro">I photograph the roads I ride. The circled frame is my pick from each roll.</p>
+      <div class="sheet">
+        <div class="sheet-top"><span>ROLL 07 · KONKAN RUN</span><span>▸ 24</span></div>
+        <div class="frames">
+          <figure><div class="img"><span class="ph">Your photo</span></div><figcaption>01A <span>1/1000 · f/4</span></figcaption></figure>
+          <figure><div class="img"><span class="ph">Your photo</span></div><figcaption>02A <span>1/250 · f/8</span></figcaption></figure>
+          <figure><div class="img"><span class="ph">Your photo</span></div><figcaption>03A <span>1/500 · f/5.6</span></figcaption></figure>
+          <figure><div class="img"><span class="ph">Your photo</span></div><figcaption>04A <span>1/60 · f/2</span></figcaption></figure>
+        </div>
+      </div>
+      <div class="why">
+        <article class="card"><span class="tag">Track days</span><h3>Precision</h3><p>Braking markers and data: the discipline behind reliable software.</p></article>
+        <article class="card"><span class="tag">Touring</span><h3>Distance</h3><p>Long roads teach the patience that big platform rebuilds need.</p></article>
+      </div>
+    </section>
+
+    <section class="s" aria-labelledby="t5">
+      <span class="sign" aria-hidden="true" style="background:#111;color:#fff;background-image:repeating-conic-gradient(#f3f0e8 0 25%,#111 0 50%);background-size:12px 12px;color:transparent">F</span>
+      <p class="phase">Pit wall · Contact</p>
+      <h2 id="t5">Let's talk</h2>
+      <div class="pitboard">
+        <div class="board" aria-label="Pit board">
+          <div class="row"><span>P1</span><b>SITARAM</b></div>
+          <div class="row"><span>YOUR LAP</span><b>02:41.6</b></div>
+          <div class="row"><span>NEXT</span><b>BOX · SAY HELLO</b></div>
+        </div>
+        <div class="links">
+          <a href="#">sitaram.rem@gmail.com <span>Email</span></a>
+          <a href="#">in/sitaram-remalkar <span>LinkedIn</span></a>
+          <a href="#">@your-username <span>GitHub</span></a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer><span>© 2026 Sitaram Remalkar</span><span>Built to WCAG 2.2 AA · works with keyboard &amp; screen readers</span></footer>
+</div>
+</body>
+</html>

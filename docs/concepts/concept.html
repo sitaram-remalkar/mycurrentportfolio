@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sitaram Remalkar — Concept: Lines &amp; Light</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asphalt:#111214; --asphalt-2:#1a1c20; --line:#2c2f36;
+  --text:#f1efe9; --muted:#b4b7c0;
+  --signal:#ff6a1a;      /* kerb orange, 6.4:1 on asphalt */
+  --kerb:#e8e4dc;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--asphalt);color:var(--text);font-family:var(--body);font-size:1.1rem;line-height:1.6}
+a{color:var(--signal)}
+.wrap{width:min(100% - 2rem,72rem);margin-inline:auto}
+.mono{font-family:var(--mono)}
+/* header */
+header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:.02em;font-style:italic}
+.brand b{color:var(--signal)}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+nav a{color:var(--muted);text-decoration:none} nav a:hover{color:var(--text)}
+/* hero */
+.hero{position:relative;padding:4rem 0 3rem;overflow:hidden}
+.frame{position:relative;padding:3rem 2.5rem;border-radius:4px;
+  background:
+   radial-gradient(120% 90% at 85% 20%, rgba(255,106,26,.28), transparent 55%),
+   linear-gradient(160deg,#23262c 0%,#141518 60%);
+  min-height:30rem;display:flex;flex-direction:column;justify-content:flex-end}
+/* viewfinder corners */
+.frame::before,.frame::after,.frame .c1,.frame .c2{content:"";position:absolute;width:34px;height:34px;border:3px solid var(--kerb)}
+.frame::before{top:16px;left:16px;border-right:0;border-bottom:0}
+.frame::after{top:16px;right:16px;border-left:0;border-bottom:0}
+.frame .c1{bottom:16px;left:16px;border-right:0;border-top:0}
+.frame .c2{bottom:16px;right:16px;border-left:0;border-top:0}
+.exif{position:absolute;top:26px;left:64px;right:64px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.8rem;color:var(--muted);letter-spacing:.08em}
+.exif .rec{color:var(--signal)}
+.track{position:absolute;right:-40px;top:40px;width:62%;opacity:.9}
+.frame > p,.frame > h1{position:relative;z-index:1}
+.eyebrow{margin-top:1.5rem !important;font-family:var(--mono);color:var(--signal);text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;margin:0 0 .5rem}
+h1{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(3.5rem,11vw,8.5rem);line-height:.86;letter-spacing:-.01em;margin:0 0 1.25rem}
+h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--kerb)}
+.lede{max-width:40ch;color:var(--muted);font-size:1.25rem;margin:0}
+/* kerb strip */
+.kerb{height:14px;background:repeating-linear-gradient(90deg,var(--signal) 0 40px,var(--kerb) 40px 80px);margin:0}
+/* telemetry */
+.telemetry{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-top:0}
+.telemetry div{padding:1.25rem 1.5rem;border-right:1px solid var(--line)}
+.telemetry div:last-child{border-right:0}
+.telemetry dd{margin:0;font-family:var(--display);font-weight:800;font-size:3rem;line-height:1;font-style:italic}
+.telemetry dd small{font-size:1rem;color:var(--signal);margin-left:.25rem;font-style:normal}
+.telemetry dt{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:.4rem}
+.telemetry{display:grid}
+.telemetry > div{display:flex;flex-direction:column-reverse}
+/* sections */
+section.s{padding:4.5rem 0 1rem}
+.s h2{display:flex;align-items:baseline;gap:1rem;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:clamp(2.2rem,5vw,3.5rem);margin:0 0 2rem;line-height:1}
+.s h2 .lap{font-family:var(--mono);font-style:normal;font-weight:500;font-size:.85rem;color:var(--signal);letter-spacing:.12em}
+.grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);grid-template-columns:repeat(3,1fr)}
+.card{background:var(--asphalt-2);padding:1.75rem}
+.card .tag{font-family:var(--mono);font-size:.75rem;color:var(--signal);text-transform:uppercase;letter-spacing:.12em}
+.card h3{font-family:var(--display);font-weight:800;font-size:1.8rem;text-transform:uppercase;line-height:1;margin:.5rem 0 .75rem}
+.card p{color:var(--muted);margin:0;font-size:1rem}
+.card.wide{grid-column:span 2;background:linear-gradient(120deg,rgba(255,106,26,.16),var(--asphalt-2) 55%)}
+/* gallery */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:14rem 14rem;gap:.75rem}
+.ph{position:relative;border-radius:3px;overflow:hidden;display:flex;align-items:flex-end;padding:.9rem}
+.ph:nth-child(1){grid-row:span 2;background:linear-gradient(200deg,#ff8a3d 0%,#7a2c12 45%,#121315 100%)}
+.ph:nth-child(2){background:linear-gradient(160deg,#5a6b7d,#1c2229)}
+.ph:nth-child(3){background:linear-gradient(130deg,#2f4a3a,#0f1712)}
+.ph:nth-child(4){background:linear-gradient(170deg,#c9b38f,#4a3a26)}
+.ph:nth-child(5){background:linear-gradient(150deg,#3a3f8a,#111327)}
+.ph .cap{font-family:var(--mono);font-size:.75rem;background:rgba(0,0,0,.6);padding:.3rem .55rem;border-radius:2px;color:var(--kerb);letter-spacing:.05em}
+.ph .ph-label{position:absolute;top:.9rem;left:.9rem;font-family:var(--mono);font-size:.7rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.12em}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:.75rem}
+.split .card h3{font-size:2.2rem}
+footer{margin-top:4rem;padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:.8rem;display:flex;justify-content:space-between}
+@media (max-width:52rem){
+  nav{display:none} .grid,.split{grid-template-columns:1fr} .card.wide{grid-column:auto}
+  .telemetry{grid-template-columns:repeat(2,1fr)} .telemetry div:nth-child(2){border-right:0}
+  .telemetry div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:16rem 10rem 10rem}
+  .ph:nth-child(1){grid-column:span 2;grid-row:auto}
+  .ph:nth-child(5){display:none}
+  .frame{padding:2rem 1.5rem;min-height:26rem} .track{width:120%;right:-45%;top:70px;opacity:.22}
+  .exif{left:56px;right:56px;font-size:.7rem} .exif .hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">SITARAM<b>.</b>R</div>
+    <nav aria-label="Primary"><ul><li><a href="#">Work</a></li><li><a href="#">Laps</a></li><li><a href="#">Frames</a></li><li><a href="#">Contact</a></li></ul></nav>
+  </header>
+
+  <section class="hero" aria-labelledby="h">
+    <div class="frame">
+      <span class="c1"></span><span class="c2"></span>
+      <div class="exif" aria-hidden="true"><span class="rec">● REC</span><span class="hide-sm">f/2.8 · 1/2000s · ISO 200</span><span>MUMBAI · 19.0°N</span></div>
+      <svg class="track" viewBox="0 0 400 260" aria-hidden="true"><path d="M40 200 C 20 120, 90 60, 170 70 S 300 20, 350 80 S 380 200, 300 220 S 200 180, 150 215 S 60 240, 40 200 Z" fill="none" stroke="#ff6a1a" stroke-width="5" stroke-linecap="round"/><path d="M40 200 C 20 120, 90 60, 170 70 S 300 20, 350 80 S 380 200, 300 220 S 200 180, 150 215 S 60 240, 40 200 Z" fill="none" stroke="#e8e4dc" stroke-width="1" stroke-dasharray="4 8" transform="translate(6 6)" opacity=".5"/><circle cx="170" cy="70" r="7" fill="#e8e4dc"/></svg>
+      <p class="eyebrow">Principal Software Engineer · Rider · Photographer</p>
+      <h1>Sitaram<span>Remalkar</span></h1>
+      <p class="lede">I chase clean lines — on the track, through a lens, and in the tools I build that make the web accessible to everyone.</p>
+    </div>
+    <div class="kerb" aria-hidden="true"></div>
+    <dl class="telemetry">
+      <div><dt>Years in the saddle — software</dt><dd>13<small>+ yrs</small></dd></div>
+      <div><dt>Accessibility rules engineered</dt><dd>640<small>+</small></dd></div>
+      <div><dt>Marketplace releases shipped</dt><dd>45<small>+</small></dd></div>
+      <div><dt>Browsers, one codebase</dt><dd>4</dd></div>
+    </dl>
+  </section>
+
+  <section class="s" aria-labelledby="w">
+    <h2 id="w"><span class="lap">LAP 01</span>The Work</h2>
+    <div class="grid">
+      <article class="card wide"><span class="tag">Dev tooling · sole developer</span><h3>A11yInspect for VS Code &amp; CLI</h3><p>Accessibility auditing in the editor and the pipeline — 17+ frameworks, AI explain/fix, SARIF output and a GitHub Action.</p></article>
+      <article class="card"><span class="tag">Core platform</span><h3>640-rule engine</h3><p>The engine behind every BarrierBreak product — web, IDE, browser, mobile and MCP.</p></article>
+      <article class="card"><span class="tag">Compliance</span><h3>VPAT on autopilot</h3><p>AI-assisted ACR reports across WCAG, 508 and EN 301 549.</p></article>
+      <article class="card"><span class="tag">Extensions</span><h3>4 browsers, 1 codebase</h3><p>Chrome, Edge, Firefox and Safari, unified.</p></article>
+      <article class="card"><span class="tag">Auth &amp; billing</span><h3>SSO + Stripe</h3><p>Enterprise SAML and the full subscription lifecycle.</p></article>
+    </div>
+  </section>
+
+  <section class="s" aria-labelledby="f">
+    <h2 id="f"><span class="lap">LAP 02</span>Frames</h2>
+    <div class="gallery">
+      <figure class="ph" style="margin:0"><span class="ph-label">Your photo</span><figcaption class="cap">Hairpin, Kari Motor Speedway · 1/1000s</figcaption></figure>
+      <figure class="ph" style="margin:0"><span class="ph-label">Your photo</span><figcaption class="cap">Western Ghats · dawn</figcaption></figure>
+      <figure class="ph" style="margin:0"><span class="ph-label">Your photo</span><figcaption class="cap">Konkan coast road</figcaption></figure>
+      <figure class="ph" style="margin:0"><span class="ph-label">Your photo</span><figcaption class="cap">Pit lane portrait</figcaption></figure>
+      <figure class="ph" style="margin:0"><span class="ph-label">Your photo</span><figcaption class="cap">Mumbai at night</figcaption></figure>
+    </div>
+    <div class="split">
+      <article class="card"><span class="tag">On the track</span><h3>Precision</h3><p>Braking points, apexes, data. The same discipline I bring to performance and reliability.</p></article>
+      <article class="card"><span class="tag">On tour</span><h3>Distance</h3><p>Long roads and unplanned stops. The patience that big platform rebuilds need.</p></article>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Sitaram Remalkar</span><span>WCAG 2.2 AA · built for everyone</span></footer>
+</div>
+</body>
+</html>
